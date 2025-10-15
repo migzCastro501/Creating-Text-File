@@ -94,24 +94,41 @@ namespace Creating_Text_File
             $"Contact No.: {contactNo}"
 };
             try
-            { 
+            {
 
-                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string filePath = Path.Combine(docPath, FrmFileName.SetFileName);
+                string projectRoot = Directory.GetParent(Application.StartupPath).Parent.Parent.FullName;
+                string folderPath = Path.Combine(projectRoot, "Files");
 
-                using (StreamWriter write = new StreamWriter(filePath, true))
+
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                string filePath = Path.Combine(folderPath, FrmFileName.SetFileName);
+
+
+                using (StreamWriter writer = new StreamWriter(filePath, true))
                 {
-                    write.WriteLine(" Registration Info ");
+                    foreach (string line in lines)
+                    {
+                        writer.WriteLine(line);
+                    }
                 }
-                        MessageBox.Show("Registration info saved successfully!\n" + filePath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
 
+                MessageBox.Show("Registration saved successfully to:\n" + filePath,
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error saving file: " + ex.Message,
-                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error saving registration: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.Close();
+        }
+
+        private void txtContactNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

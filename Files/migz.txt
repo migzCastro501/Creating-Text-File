@@ -1,0 +1,7 @@
+Student No.: 02000374918
+Full Name: Castro, miguel, s.
+Program: BS Computer Science
+Gender: Male
+Age: 20
+Birthday: 2025-10-15
+Contact No.: 09139821331
