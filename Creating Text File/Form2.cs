@@ -81,6 +81,7 @@ namespace Creating_Text_File
             string birthday = datePickerBirthday.Value.ToString("yyyy-MM-dd");
             string contactNo = txtContactNo.Text;
 
+
             string fullName = $"{lastName}, {firstName}, {middleInitial}.";
 
             string[] lines = {
