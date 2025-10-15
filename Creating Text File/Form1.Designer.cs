@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtInput1 = new System.Windows.Forms.TextBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtInput1
+            // txtInput
             // 
-            this.txtInput1.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtInput1.Location = new System.Drawing.Point(38, 28);
-            this.txtInput1.Multiline = true;
-            this.txtInput1.Name = "txtInput1";
-            this.txtInput1.Size = new System.Drawing.Size(316, 159);
-            this.txtInput1.TabIndex = 0;
+            this.txtInput.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtInput.Location = new System.Drawing.Point(38, 28);
+            this.txtInput.Multiline = true;
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(316, 159);
+            this.txtInput.TabIndex = 0;
             // 
             // btnCreate
             // 
@@ -49,15 +49,16 @@
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // FrmLab1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(396, 259);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.txtInput1);
+            this.Controls.Add(this.txtInput);
             this.Name = "FrmLab1";
             this.Text = "FrmLab1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -68,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtInput1;
+        private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Button btnCreate;
     }
 }
